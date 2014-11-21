@@ -1,8 +1,0 @@
-name    'puppetlabs-pe_puppetserver_gem'
-version '0.0.1'
-source  'https://github.com/puppetlabs/puppetlabs-pe_puppetserver_gem'
-author  'Puppet Labs'
-license 'Apache License 2.0'
-summary 'Puppet Labs PE Puppetserver Gem Module'
-description 'Puppetserver Gem module for Puppet Enterprise'
-project_page 'https://github.com/puppetlabs/puppetlabs-pe_puppetserver_gem'
