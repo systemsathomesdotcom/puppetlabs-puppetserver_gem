@@ -2,7 +2,7 @@ require 'beaker-rspec/spec_helper'
 require 'beaker-rspec/helpers/serverspec'
 
 unless ENV['RS_PROVISION'] == 'no'
-  install_pe
+  install_puppet
 
   hosts.each do |host|
     if host['platform'] =~ /debian/
@@ -24,7 +24,7 @@ RSpec.configure do |c|
     # Install module and dependencies
     hosts.each do |host|
       if host['platform'] !~ /windows/i
-        copy_root_module_to(host, :source => proj_root, :module_name => 'pe_puppetserver_gem')
+        copy_root_module_to(host, :source => proj_root, :module_name => 'puppetserver_gem')
       end
     end
   end

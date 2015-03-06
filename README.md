@@ -1,13 +1,13 @@
-# puppetlabs pe_puppetserver_gem module
+# puppetlabs puppetserver_gem module
 
-This module provides management of Ruby gems for PE Puppet Server.
+This module provides management of Ruby gems for PuppetServer.
 
 
 For PE Puppet Server:
 
     package { 'json':
       ensure   => present,
-      provider => pe_puppetserver_gem,
+      provider => puppetserver_gem,
     }
 
 This uses gem as a parent and uses the PE version of the

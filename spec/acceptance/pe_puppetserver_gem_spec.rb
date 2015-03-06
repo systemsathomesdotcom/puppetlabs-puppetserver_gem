@@ -1,11 +1,11 @@
 require 'spec_helper_acceptance'
 
-describe 'installing a gem with the pe_puppetserver_gem provider' do
+describe 'installing a gem with the puppetserver_gem provider' do
   it 'should work with no errors' do
     pp = <<-EOS
       package { 'hocon':
         ensure => present,
-        provider => pe_puppetserver_gem,
+        provider => puppetserver_gem,
       }
     EOS
 
@@ -15,16 +15,16 @@ describe 'installing a gem with the pe_puppetserver_gem provider' do
   end
 
   it 'should successfully install the desired gem' do
-    shell("/opt/puppet/bin/puppetserver gem list | grep hocon", :acceptable_exit_codes => 0)
+    shell("/usr/bin/puppetserver gem list | grep hocon", :acceptable_exit_codes => 0)
   end
 end
 
-describe 'removing a gem with the pe_puppetserver_gem provider' do
+describe 'removing a gem with the puppetserver_gem provider' do
   it 'should work with no errors' do
     pp = <<-EOS
       package { 'hocon':
         ensure => absent,
-        provider => pe_puppetserver_gem,
+        provider => puppetserver_gem,
       }
     EOS
 
@@ -34,6 +34,6 @@ describe 'removing a gem with the pe_puppetserver_gem provider' do
   end
 
   it 'should successfully remove the desired gem' do
-    shell("/opt/puppet/bin/puppetserver gem list | grep hocon", :acceptable_exit_codes => 1)
+    shell("/usr/bin/puppetserver gem list | grep hocon", :acceptable_exit_codes => 1)
   end
 end

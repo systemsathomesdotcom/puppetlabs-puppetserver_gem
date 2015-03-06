@@ -1,4 +1,4 @@
 package { 'hocon':
   ensure   => present,
-  provider => pe_puppetserver_gem,
+  provider => puppetserver_gem,
 }
